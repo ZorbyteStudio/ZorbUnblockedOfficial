@@ -1,4 +1,7 @@
-Note: This read me is in .TXT so that all softwares that download or insert this into there system can read it...
+Note: This read me is in .TXT so that all softwares that download or insert this into there system can read it.
+
+Note: If you are on the github, you are free to suggest games. If your not on the github, you can also suggest
+games to your usb provider!
 
     MIT License:
 
