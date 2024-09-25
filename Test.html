@@ -1,39 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
   <title>Your Website Title</title>
   
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="//www.gstatic.com/classroom/ic_product_classroom_144.png">
+</head>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <script>
-    // Function to set the title from a predefined list
-    function setTitle() {
-      const titles = [
-        "Welcome to My Website",
-        "Learn About My Projects",
-        "Explore Fun Games",
-        "Contact Me",
-        "About Us"
-      ];
-      
-      const userChoice = prompt("Choose a title:\n" + titles.join("\n"));
-      
-      // Set the title if the user selects a valid option
-      if (titles.includes(userChoice)) {
-        document.title = userChoice;
-      } else {
-        alert("Invalid selection. Title will remain as default.");
-      }
-    }
-
-    // Call the setTitle function when the page loads
-    window.onload = setTitle;
-  </script>
-
   <style>
     body, html {
       margin: 0;
