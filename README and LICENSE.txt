@@ -37,7 +37,7 @@ Note that the goal of this is to reach 500 unblocked HTML games. Once that goal 
 next goal will be 1,000 unblocked HTML games and then of course the next being 5,000. Our
 current amount will be listed below:
 
-  20/500 |  Unblocked HTML games
+  28/500 |  Unblocked HTML games
 
 And of course, we hope you have fun playing these unblocked games. If you find any
 errors, please report to your provider.
