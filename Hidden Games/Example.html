@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Human Interaction Check</title>
+    <script>
+        function detectHuman() {
+            // Basic check for human interaction (mouse movement or keyboard input)
+            window.addEventListener('mousemove', function() {
+                document.getElementById('content').style.display = 'block';
+            });
+            window.addEventListener('keydown', function() {
+                document.getElementById('content').style.display = 'block';
+            });
+        }
+
+        window.onload = function() {
+            detectHuman();
+        };
+    </script>
+    <style>
+        #content {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Interaction Required</h1>
+<p>Move your mouse or press a key to see the content.</p>
+
+<div id="content">
+    <p>Yay it worked!.</p>
+</div>
+
+</body>
+</html>
