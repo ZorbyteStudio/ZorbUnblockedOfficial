@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customizable Interaction Check with Timeout</title>
+    <script>
+        let interactionTimeout;
+
+        // Function to show the content and hide the interaction required message
+        function showContent() {
+            document.getElementById('interaction-required').style.display = 'none';
+            document.getElementById('content').style.display = 'block';
+            resetTimeout();
+        }
+
+        // Function to hide the content and show the interaction required message
+        function hideContent() {
+            document.getElementById('content').style.display = 'none';
+            document.getElementById('interaction-required').style.display = 'block';
+        }
+
+        // Reset the inactivity timeout
+        function resetTimeout() {
+            clearTimeout(interactionTimeout);
+            interactionTimeout = setTimeout(hideContent, 5000); // 5 seconds of inactivity
+        }
+
+        function detectHuman() {
+            // Detect mouse movement or keyboard input to show content
+            window.addEventListener('mousemove', showContent);
+            window.addEventListener('keydown', showContent);
+        }
+
+        window.onload = function() {
+            detectHuman();
+        };
+    </script>
+    <style>
+        #content {
+            display: none;
+        }
+        #interaction-required {
+            text-align: center;
+            font-size: 1.5rem;
+            color: #ff0000;
+        }
+    </style>
+</head>
+<!-- Interaction Required Section -->
+<div id="interaction-required">
+    <!-- ICON: PLACE YOUR ICON HERE -->
+    <span class="material-symbols-rounded">
+gpp_maybe
+</span>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,500,0,0" /> <h1>HIDDEN AREA</h1>  <!-- CHANGE THIS TEXT -->
+    <p>No emulators, screen readers, school verification, or school trackers are allowed to see this tab</p>
+</div>
+
+<!-- Hidden Content Section -->
+<div id="content">
+    <!-- ICON: PLACE YOUR ICON HERE -->
+    <span class="material-symbols-rounded">
+verified
+</span>
+</style>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,500,0,0" /> <h1>Verified!</h1>  <!-- CHANGE THIS TEXT -->
+
+<body>
+<iframe id="userHtmlFrame" frameborder="0" scrolling="yes" style="overflow: auto;">
+</iframe>
+
+<script>function loadGapi(){var loaderScript=document.createElement('script');loaderScript.setAttribute('src','https://apis.google.com/js/api.js?checkCookie=1');loaderScript.onload=function(){this.onload=function(){};loadGapiClient();};loaderScript.onreadystatechange=function(){if(this.readyState==='complete'){this.onload();}};(document.head||document.body||document.documentElement).appendChild(loaderScript);}function updateUserHtmlFrame(userHtml,enableInteraction,forceIosScrolling){var frame=document.getElementById('userHtmlFrame');if(enableInteraction){if(forceIosScrolling){var iframeParent=frame.parentElement;iframeParent.classList.add('forceIosScrolling');}else{frame.style.overflow='auto';}}else{frame.setAttribute('scrolling','no');frame.style.pointerEvents='none';}clearCookies();clearStorage();frame.contentWindow.document.open();frame.contentWindow.document.write('<base target="_blank">'+userHtml);frame.contentWindow.document.close();}function onGapiInitialized(){gapi.rpc.call('..','innerFrameGapiInitialized');gapi.rpc.register('updateUserHtmlFrame',updateUserHtmlFrame);}function loadGapiClient(){gapi.load('gapi.rpc',onGapiInitialized);}if(document.readyState=='complete'){loadGapi();}else{self.addEventListener('load',loadGapi);}function clearCookies(){var cookies=document.cookie.split(";");for(var i=0;i<cookies.length;i++){var cookie=cookies[i];var equalPosition=cookie.indexOf("=");var name=equalPosition>-1?cookie.substr(0,equalPosition):cookie;document.cookie=name+"=;expires=Thu, 01 Jan 1970 00:00:00 GMT";document.cookie=name+"=;expires=Thu, 01 Jan 1970 00:00:01 GMT ;domain=.googleusercontent.com";}}function clearStorage(){try{localStorage.clear();sessionStorage.clear();}catch(e){}}</script>
+
+
+</body>
+
+</div>
+
+</html>
