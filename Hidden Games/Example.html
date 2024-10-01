@@ -3,14 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Human Interaction Check</title>
+    <title>Customizable Interaction Check</title>
     <script>
         function detectHuman() {
             // Basic check for human interaction (mouse movement or keyboard input)
             window.addEventListener('mousemove', function() {
+                // Hide the interaction required message
+                document.getElementById('interaction-required').style.display = 'none';
+                // Show the main content
                 document.getElementById('content').style.display = 'block';
             });
             window.addEventListener('keydown', function() {
+                // Hide the interaction required message
+                document.getElementById('interaction-required').style.display = 'none';
+                // Show the main content
                 document.getElementById('content').style.display = 'block';
             });
         }
@@ -23,15 +29,31 @@
         #content {
             display: none;
         }
+        #interaction-required {
+            text-align: center;
+            font-size: 1.5rem;
+            color: #ff0000;
+        }
     </style>
 </head>
 <body>
 
-<h1>Interaction Required</h1>
-<p>Move your mouse or press a key to see the content.</p>
+<!-- Interaction Required Section -->
+<div id="interaction-required">
+    <!-- ICON: PLACE YOUR ICON HERE -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    
+    <h1>Interaction Required</h1>  <!-- CHANGE THIS TEXT -->
+    <p>Move your mouse or press a key to see the content.</p>
+</div>
 
+<!-- Hidden Content Section -->
 <div id="content">
-    <p>Yay it worked!.</p>
+    <!-- ICON: PLACE YOUR ICON HERE -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    
+    <h1>Interaction Complete</h1>  <!-- CHANGE THIS TEXT -->
+    <p>You've verified your interaction. Enjoy the content!</p>
 </div>
 
 </body>
