@@ -41,11 +41,15 @@
                 if (pressedKeys.has('9') && pressedKeys.has('4')) {
                     showContent(); // Show content when both keys are pressed
                 }
+            
+            window.addEventListener('keydown', function(e) {
+                pressedKeys.add(e.key);
 
                 // Check if both 2 and 8 are pressed simultaneously to hide content
                 if (pressedKeys.has('2') && pressedKeys.has('8')) {
                     hideContent(); // Manually hide content
                 }
+                
             });
 
             // When a key is released, remove it from the set
