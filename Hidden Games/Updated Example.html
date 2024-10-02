@@ -3,10 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Customizable Key Interaction</title>
+    <title>Customizable Key Interaction with Hiding</title>
     <script>
         let interactionTimeout;
         let loggedIn = false; // Keep track of login status
+        const pressedKeys = new Set(); // Set to track currently pressed keys
 
         // Function to show the content and hide the interaction required message
         function showContent() {
@@ -31,20 +32,17 @@
             }, 30000); // 30-second inactivity timeout
         }
 
-        // Function to detect if both 9 and 4 are pressed
-        function detectKeyPress(event) {
-            const pressedKeys = new Set();
-
-            // When a key is pressed
+        // Function to detect if both 9 and 4 are pressed to show content
+        function detectKeyPress() {
             window.addEventListener('keydown', function(e) {
                 pressedKeys.add(e.key);
 
-                // Check if both 9 and 4 are pressed
+                // Check if both 9 and 4 are pressed simultaneously
                 if (pressedKeys.has('9') && pressedKeys.has('4')) {
                     showContent(); // Show content when both keys are pressed
                 }
 
-                // Check if Shift + 8 is pressed to manually hide content
+                // Check if both 2 and 8 are pressed simultaneously to hide content
                 if (pressedKeys.has('2') && pressedKeys.has('8')) {
                     hideContent(); // Manually hide content
                 }
